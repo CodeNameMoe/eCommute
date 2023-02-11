@@ -1,0 +1,49 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1024px;
+  margin: 0 auto 0 auto;
+  padding: 1rem 2rem;
+  align-items: center;
+  color: black;
+}
+
+.logo {
+  font-size: 1.5rem;
+}
+
+.Link {
+  text-decoration: none;
+  color: black;
+}
+
+.navLinks {
+  display: flex;
+  list-style-type: none;
+  gap: 15px;
+}
+.navLink {
+  text-decoration: none;
+  color: black;
+}
+
+.logout {
+  text-decoration: none;
+  color: black;
+}
+
+.logoutSignUp {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.logoutSignUp > button {
+  background-color: #10a283;
+  color: white;
+  padding: 8px 15px;
+  border-color: transparent;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}

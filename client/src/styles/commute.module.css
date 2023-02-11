@@ -1,0 +1,89 @@
+.main {
+  background: #ecf0f1;
+  width: 100vw;
+  height: 100vh;
+  gap: 3rem;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.icons {
+  display: flex;
+  gap: 15px;
+}
+.navBarIcon {
+  cursor: pointer;
+}
+
+.logoutIcon {
+  padding-right: 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: black;
+}
+.Link {
+  text-decoration: none;
+  color: black;
+}
+
+/* form section  */
+
+.formSection {
+  margin: 4rem auto;
+  width: 900px;
+  height: 700px;
+  background: white;
+}
+
+.tab {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.left {
+  background-color: white;
+  width: 50%;
+  cursor: pointer;
+}
+.left > h2 {
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.right {
+  background-color: #0ca789;
+  width: 50%;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.right > h2 {
+  padding: 0.15rem 1rem;
+  text-align: center;
+  font-size: 1.25rem;
+  color: white;
+}
+
+.formItem {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.formItemText {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}

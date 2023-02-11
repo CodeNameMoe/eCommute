@@ -1,0 +1,42 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+  background: #ccdbe3;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+.heroText {
+  width: 80%;
+}
+
+.heroText > h1 {
+  font-size: 2rem;
+  padding-bottom: 0.5rem;
+}
+
+.heroText > h2 {
+  font-size: 1rem;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.btn > button {
+  background-color: #10a283;
+  color: white;
+  padding: 8px 15px;
+  border-color: transparent;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
