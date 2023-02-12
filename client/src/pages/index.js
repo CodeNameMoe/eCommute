@@ -17,7 +17,7 @@ export default function Home() {
   const handleLogin = () => push("/api/auth/login");
 
   const { user, error, isLoading } = useUser();
-  console.log(user);
+  console.log(user.email);
   if (isLoading) {
     return <div> Loading...</div>;
   }

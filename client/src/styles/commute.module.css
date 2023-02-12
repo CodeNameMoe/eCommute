@@ -87,3 +87,18 @@
   gap: 1rem;
   padding-bottom: 1rem;
 }
+
+.submitBtn {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.submitBtn > button {
+  background-color: #10a283;
+  color: white;
+  padding: 8px 15px;
+  border-color: transparent;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}

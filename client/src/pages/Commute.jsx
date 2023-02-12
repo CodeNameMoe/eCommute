@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import styles from "../styles/commute.module.css";
 import { useRouter } from "next/router";
+import { useUser } from "@auth0/nextjs-auth0/client";
 import Link from "next/link";
 import Image from "next/image";
 import bell from "../../public/assets/bell.png";
@@ -25,22 +26,26 @@ function Commute() {
   const [date, setDate] = useState(new Date());
   const [distance, setDistance] = useState("");
   const [passengers, setPassengers] = useState("");
+  const { user, error, isLoading } = useUser();
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const mappedValue = mapping[selectedOption];
-    const selectedDate = date.toISOString();
+    const selectedDate = new Date(date).toISOString();
     const selectedDistance = parseInt(distance);
     const selectedPassengers = parseInt(passengers);
 
-    fetch("http://localhost:5000/api/submit-form", {
+    let userId = user.email;
+
+    fetch("http://localhost:5000/submit-form", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        selectedOption: mappedValue,
+        userId,
+        mappedValue,
         selectedDate,
         selectedDistance,
         selectedPassengers,
@@ -49,6 +54,7 @@ function Commute() {
       .then((response) => response.json())
       .then((data) => {
         // Do something with the response data
+        console.log(data);
       });
   };
 
@@ -83,7 +89,7 @@ function Commute() {
             <h2>Evening</h2>
           </div>
         </div>
-        <form action="#">
+        <form onSubmit={handleSubmit}>
           <div className={styles.formItem}>
             <div className={styles.formItemText}>
               <Image src={one} alt="menu" width={24} height={24} />
@@ -139,7 +145,9 @@ function Commute() {
               />
             </div>
           </div>
-          <button type="submit">Submit</button>
+          <div className={styles.submitBtn}>
+            <button type="submit">Submit</button>
+          </div>
         </form>
       </section>
     </main>
