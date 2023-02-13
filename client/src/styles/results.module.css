@@ -1,0 +1,100 @@
+.main {
+  background: #ecf0f1;
+  width: 100vw;
+  height: 100vh;
+  gap: 3rem;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  align-items: center;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.navBarIcon {
+  cursor: pointer;
+}
+
+.logoutIcon {
+  padding-right: 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: black;
+}
+.Link {
+  text-decoration: none;
+  color: black;
+}
+
+.resultsSection {
+  margin: 4rem auto;
+  width: 900px;
+  height: 700px;
+  background: white;
+}
+
+.button {
+  background-color: #10a283;
+  color: white;
+  padding: 4px 20px;
+  border-color: transparent;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.title {
+  text-align: center;
+  padding: 2rem;
+}
+
+.title > h1 > span {
+  color: #10a283;
+}
+
+.result {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.result > h2 {
+  font-size: 5rem;
+}
+
+.result > p {
+  font-size: 1.5rem;
+  width: 700px;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.result > h2 > span {
+  color: #10a283;
+}
+
+.low {
+  font-size: 1.5rem;
+  background-color: rgb(133, 244, 154);
+  color: white;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+.high {
+  font-size: 1.5rem;
+  background-color: rgb(249, 78, 78);
+  color: white;
+  padding: 0.5rem;
+  font-weight: bold;
+}

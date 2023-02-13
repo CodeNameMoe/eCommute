@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../styles/commute.module.css";
 import { useRouter } from "next/router";
 import { useUser } from "@auth0/nextjs-auth0/client";
@@ -7,7 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import bell from "../../public/assets/bell.png";
 import menu from "../../public/assets/menu.png";
-import user from "../../public/assets/user.png";
+import userImg from "../../public/assets/user.png";
 import logout from "../../public/assets/logout.png";
 import one from "../../public/assets/1.png";
 import two from "../../public/assets/2.png";
@@ -26,6 +26,8 @@ function Commute() {
   const [date, setDate] = useState(new Date());
   const [distance, setDistance] = useState("");
   const [passengers, setPassengers] = useState("");
+  const [responseData, setresponseData] = useState(null);
+
   const { user, error, isLoading } = useUser();
 
   const handleSubmit = (event) => {
@@ -53,10 +55,18 @@ function Commute() {
     })
       .then((response) => response.json())
       .then((data) => {
-        // Do something with the response data
-        console.log(data);
+        setresponseData(data);
       });
   };
+  const router = useRouter();
+  useEffect(() => {
+    if (responseData) {
+      router.push({
+        pathname: "/Results",
+        query: responseData,
+      });
+    }
+  }, [responseData]);
 
   const handleLogout = () => push("/api/auth/logout");
   return (
@@ -67,9 +77,9 @@ function Commute() {
         </Link>
         <section className={styles.icons}>
           <Image src={bell} alt="bell" width={24} height={24} />
-          <Image src={user} alt="bell" width={24} height={24} />
+          <Image src={userImg} alt="user" width={24} height={24} />
           <a onClick={handleLogout} className={styles.logoutIcon}>
-            <Image src={logout} alt="bell" width={24} height={24} />
+            <Image src={logout} alt="logout" width={24} height={24} />
           </a>
           <Image
             className={styles.navBarIcon}
